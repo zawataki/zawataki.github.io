@@ -39,6 +39,7 @@
             // Full docs on the response object can be found in the documentation
             // for FB.getLoginStatus().
             if (response.status === 'connected') {
+                $("fb_login_button").hide()
                 // Logged into your app and Facebook.
                 testAPI();
             } else {
@@ -99,8 +100,7 @@
             console.log('Welcome!  Fetching your information.... ');
             FB.api('/me', function(response) {
                 console.log('Successful login for: ' + response.name);
-                document.getElementById('status').innerHTML =
-                    'Thanks for logging in, ' + response.name + '!';
+                document.getElementById('status').innerHTML = response.name;
             });
         }
 
@@ -110,7 +110,7 @@
         <div class="split-pane-component" id="left_component">
             <div class="left_pane_item_name">FBログインユーザ名</div>
             <div id="fb_username">
-                <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+                <fb:login-button id="fb_login_button" scope="public_profile,email" onlogin="checkLoginState();">
                 </fb:login-button>
                 <div id="status">
                 </div>
