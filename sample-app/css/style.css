@@ -1,0 +1,90 @@
+html, body {
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.split-pane-divider {
+  background: #aaa;
+}
+
+#left_component {
+  width: 20em;
+  font-size: 20px;
+}
+
+#my_divider {
+  left: 20em; /* Same as left component width */
+  width: 5px;
+}
+
+#right_component {
+  left: 20em;  /* Same as left component width */
+  margin-left: 5px;  /* Same as divider width */
+}
+
+.left_pane_item_name {
+  margin: 8px;
+}
+
+#fb_username {
+  font-size: 0.8em;
+  margin-left: 8px;
+}
+
+#post_fetching_interval_list {
+  font-size: 0.8em;
+  margin-left: 8px;
+}
+
+#group_setting_items {
+  margin-left: 8px;
+}
+
+label {
+  display: block;
+}
+
+.fb_post_link {
+  margin-left: 20px;
+}
+
+header {
+  font-size: 15px;
+}
+
+.post_message {
+  font-size: 17px;
+}
+
+article {
+  display: block;
+  padding: 10px;
+  margin: 10px;
+  background: #e7e7eb;
+  word-break: break-all;
+}
+
+.posted_file {
+  position: relative;
+}
+
+.posted_file .fas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  margin:0; /*余計な隙間を除く*/
+  padding:0; /*余計な隙間を除く*/
+  color: white; /*アイコン色*/
+  font-size: 5em; /*サイズ*/
+}
+
+.posted_file img {
+  max-width: 100%;
+}
+
+

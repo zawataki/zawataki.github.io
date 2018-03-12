@@ -1,1 +1,54 @@
-Hi, this is sample app
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sample app</title>
+    <link rel="stylesheet" href="css/split-pane.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+
+    <!-- Linkify is used to convert URI string to link.
+      Refer to: http://soapbox.github.io/linkifyjs/ -->
+    <script src="js/linkify.min.js"></script>
+    <script src="js/linkify-jquery.min.js"></script>
+
+    <!-- For splitting pane -->
+    <script src="js/split-pane.js"></script>
+    <script>
+        $(function() {
+            $('div.split-pane').splitPane();
+        });
+    </script>
+
+    <!-- <script src="js/script.js"></script> -->
+</head>
+
+<body>
+    <div class="split-pane fixed-left">
+        <div class="split-pane-component" id="left_component">
+            <div class="left_pane_item_name">FBログインユーザ名</div>
+            <div id="fb_username">ログインしていません</div>
+            <div class="left_pane_item_name">投稿の取得時間</div>
+            <div id="post_fetching_interval_list">
+                <label>
+                    <input type="radio" name="post_fetching_interval" value="5" checked disabled>5分（16グループ）
+                </label>
+                <label>
+                    <input type="radio" name="post_fetching_interval" value="10" disabled>10分（33グループ）
+                </label>
+            </div>
+            <div class="left_pane_item_name">グループ表示設定</div>
+            <div id="group_setting_items">
+            </div>
+        </div>
+        <div class="split-pane-divider" id="my_divider"></div>
+        <div class="split-pane-component" id="right_component">
+        </div>
+    </div>
+</body>
+
+</html>
