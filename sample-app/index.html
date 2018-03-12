@@ -39,7 +39,8 @@
             // Full docs on the response object can be found in the documentation
             // for FB.getLoginStatus().
             if (response.status === 'connected') {
-                $("fb_login_button").hide()
+                console.log($("#fb_login_button"))
+                document.getElementById('fb_login_button').hide();
                 // Logged into your app and Facebook.
                 testAPI();
             } else {
