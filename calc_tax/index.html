@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>税計算</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="js/script.js"></script>
+  <style>
+    .item_name_column {
+      text-align: left;
+    }
+
+    .value_column {
+      text-align: right;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>税計算ツール</h1>
+  <div>あくまでも参考値としてご利用ください。</div>
+  <br>
+  <table border="0">
+    <tbody>
+      <tr>
+        <td class="item_name_column">
+          <b>あなたの所得課税額（円）</b>
+        </td>
+        <td class="value_column">
+          <input type="number" name="tax" size="30" maxlength="20" style="text-align: right">
+        </td>
+      </tr>
+      <tr>
+        <td class="item_name_column">
+          <b>所得税 合計</b>
+        </td>
+        <td id="total_income_tax" class="value_column">
+          no data
+        </td>
+      </tr>
+      <tr>
+        <td class="item_name_column">
+          <b> ┣ 所得税</b>
+        </td>
+        <td id="normal_income_tax" class="value_column">
+          no data
+        </td>
+      </tr>
+      <tr>
+        <td class="item_name_column">
+          <b> ┗ 復興特別所得税</b>
+        </td>
+        <td id="reconstruction_special_income_tax" class="value_column">
+          no data
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
+</html>
