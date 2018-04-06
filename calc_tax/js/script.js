@@ -17,16 +17,24 @@ function calcTax(taxableIncome) {
     else
         incomeTax = taxableIncome * 0.45 - 4796000
 
-
+    incomeTax = Math.floor(incomeTax)
     let reconstructionTax = Math.floor(incomeTax * 0.021) / 100 * 100
+    reconstructionTax = Math.floor(reconstructionTax)
 
     $("#total_income_tax").text((incomeTax + reconstructionTax).toLocaleString())
     $("#normal_income_tax").text(incomeTax.toLocaleString())
     $("#reconstruction_special_income_tax").text(reconstructionTax.toLocaleString())
+
+    $("#reconstruction_special_income_tax").css("width", $("#total_income_tax").css("width"))
+}
+
+function clearInputField() {
+    $('#taxable_income').val('')
+    calcTax(0)
 }
 
 $(function() {
-    // キーを入力するたびに実行
+    // Execute each typing key
     $('input[type="number"]').keyup(function() {
 
         let taxableIncome = $(this).val()

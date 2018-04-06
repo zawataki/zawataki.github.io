@@ -9,56 +9,72 @@
     crossorigin="anonymous"></script>
   <script src="js/script.js"></script>
   <style>
-    .item_name_column {
-      text-align: left;
+    .result_number {
+      display: inline-block;
+      text-align: right;
+      background-color: rgb(243, 227, 157);
+      padding-right: 3px;
+      padding-left: 3px;
     }
 
-    .value_column {
+    #taxable_income {
+      width: 8em;
       text-align: right;
+    }
+
+    /*
+    Hide spin button of input number box.
+    Refer to: https://qiita.com/mrpero/items/c562cf9c2493bbbfe431
+     */
+
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    input[type="number"] {
+      -moz-appearance: textfield;
+    }
+
+    /* ウィンドウ幅が0〜479pxの場合に適用するCSS */
+
+    @media screen and ( max-width:479px) {
+      table {
+        /* TODO Set anything */
+      }
     }
   </style>
 </head>
 
 <body>
-  <h1>税計算ツール</h1>
+  <h1>所得税計算ツール</h1>
   <div>あくまでも参考値としてご利用ください。</div>
   <br>
-  <table border="0">
-    <tbody>
-      <tr>
-        <td class="item_name_column">
-          <b>あなたの所得課税額（円）</b>
-        </td>
-        <td class="value_column">
-          <input type="number" name="tax" size="30" maxlength="20" style="text-align: right">
-        </td>
-      </tr>
-      <tr>
-        <td class="item_name_column">
-          <b>所得税 合計</b>
-        </td>
-        <td id="total_income_tax" class="value_column">
-          no data
-        </td>
-      </tr>
-      <tr>
-        <td class="item_name_column">
-          <b> ┣ 所得税</b>
-        </td>
-        <td id="normal_income_tax" class="value_column">
-          no data
-        </td>
-      </tr>
-      <tr>
-        <td class="item_name_column">
-          <b> ┗ 復興特別所得税</b>
-        </td>
-        <td id="reconstruction_special_income_tax" class="value_column">
-          no data
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <div>
+    あなたの所得課税額（円）
+  </div>
+  <input type="number" name="tax" id="taxable_income">
+  <button onclick="clearInputField()">Clear</button>
+  <div>
+    所得税 合計
+  </div>
+  <div id="total_income_tax" class="result_number">
+    0
+  </div>
+  <div>
+    所得税
+  </div>
+  <div id="normal_income_tax" class="result_number">
+    0
+  </div>
+  <div>
+    復興特別所得税
+  </div>
+  <div id="reconstruction_special_income_tax" class="result_number">
+    0
+  </div>
+
 </body>
 
 </html>
