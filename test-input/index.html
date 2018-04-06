@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Test HTML input tag</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="js/script.js"></script>
+  <style>
+    .item_name_column {
+      text-align: center;
+    }
+
+    .value_column {
+      text-align: right;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Test HTML input tag</h1>
+  <br>
+  <table border="0">
+    <thead>
+      <th>type</th>
+      <th>pattern</th>
+      <th>example</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="item_name_column">number</td>
+        <td class="item_name_column">none</td>
+        <td class="value_column"><input type="number"></td>
+      </tr>
+      <tr>
+        <td class="item_name_column">tel</td>
+        <td class="item_name_column">none</td>
+        <td class="value_column"><input type="tel"></td>
+      </tr>
+      <tr>
+        <td class="item_name_column">text</td>
+        <td class="item_name_column">"\d*"</td>
+        <td class="value_column"><input type="text" pattern="\d*"></td>
+      </tr>
+      <tr>
+        <td class="item_name_column">number</td>
+        <td class="item_name_column">"\d*"</td>
+        <td class="value_column"><input type="number" pattern="\d*"></td>
+      </tr>
+      <tr>
+        <td class="item_name_column">tel</td>
+        <td class="item_name_column">"\d*"</td>
+        <td class="value_column"><input type="tel" pattern="\d*"></td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
+</html>
+
