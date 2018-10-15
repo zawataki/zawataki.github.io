@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Test HTML input tag</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
   <script src="js/datalist-polyfill.min.js"></script>
@@ -73,10 +73,10 @@
   <section>
     <h2>datalist</h2>
     都道府県：
-    <input list="browsers" name="address-level1" autocomplete="address-level1" autocorrect="off">
+    <input type="text" list="browsers" name="address-level1" autocomplete="address-level1" autocorrect="off">
     <datalist id="browsers">
-      <option value="北海道">北海道</option>
-      <option value="青森県">青森県</option>
+      <option value="北海道"></option>
+      <option value="青森県"></option>
       <option value="岩手県">岩手県</option>
       <option value="宮城県">宮城県</option>
       <option value="秋田県">秋田県</option>
@@ -124,6 +124,21 @@
       <option value="沖縄県">沖縄県</option>
     </datalist>
   </section>
+
+  <section>
+    Choose from this list
+    <select>
+      <option value="a">A</option>
+      <option value="b">B</option>
+      <option value="c">C</option>
+    </select>
+    or type in a custom input
+    <input type="text" name="custominput">
+  </section>
+
+  <footer>
+    <a href="/">Go to top menu</a>
+  </footer>
 </body>
 
 </html>
