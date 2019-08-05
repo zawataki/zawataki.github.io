@@ -9,3 +9,8 @@ body {
 div.logo {
     display: inline-block;
 }
+
+h1,h2,h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
