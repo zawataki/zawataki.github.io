@@ -1,0 +1,18 @@
+language: python
+
+python:
+  - 2.7
+
+install:
+  - pip install requests[security]
+  - pip install httpie
+  - pip install git+https://github.com/linkchecker/linkchecker.git
+
+before_script:
+  - python --version
+  - pip --version
+  - linkchecker --version
+
+script:
+  - linkchecker --check-extern --timeout 10 --config=./linkcheckerrc . 
+
