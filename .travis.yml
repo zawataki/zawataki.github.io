@@ -1,7 +1,7 @@
 language: python
 
 python:
-  - 2.7
+  - 3.8
 
 install:
   - pip install git+https://github.com/linkchecker/linkchecker.git
@@ -13,4 +13,3 @@ before_script:
 
 script:
   - linkchecker --check-extern --timeout 10 --config=./linkcheckerrc . 
-
