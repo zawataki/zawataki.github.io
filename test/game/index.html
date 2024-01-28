@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Game</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"></script>
+  <script src="js/script.js"></script>
+  <style>
+    .result_number {
+      display: inline-block;
+      text-align: right;
+      background-color: rgb(243, 227, 157);
+      padding-right: 3px;
+      padding-left: 3px;
+    }
+
+    #taxable_income {
+      width: 8em;
+      text-align: right;
+    }
+
+    body {
+      font-size: 1.2rem;
+    }
+
+    button,
+    input {
+      font-size: 1.2rem;
+      padding-left: 0.1rem;
+      padding-right: 0.1rem;
+      padding-top: 0.01rem;
+      padding-bottom: 0.01rem;
+    }
+
+    li {
+      padding-top: 0.8rem;
+      padding-bottom: 0.8rem;
+    }
+
+  </style>
+</head>
+
+<body>
+  <h1>Game</h1>
+  <p>プレイ人数 <input type="number" inputmode="numeric" id="num_of_players" min="2"
+      max="100" value="4" size="3" width="12px">
+    人
+    <button onclick="startGame()">始める</button>
+  </p>
+  <button onclick="chooseSubject()">テーマを決める</button>
+  <button onclick="dealCards()">カードを配る</button>
+  <p>テーマ：<span id="subject"></span></p>
+  <div id="playground">
+    <ol id="players">
+    </ol>
+  </div>
+</body>
+
+</html>
