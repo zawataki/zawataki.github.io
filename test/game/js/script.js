@@ -10,7 +10,7 @@ function startGame() {
         for (let i = 1; i <= numOfPlayers; i++) {
             let id = 'player-' + i
             let player = {
-                name: 'プレイヤー名',
+                name: 'プレイヤー' + i,
                 card: null,
             }
             addPlayer(id, player)
