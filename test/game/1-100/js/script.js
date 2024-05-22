@@ -21,6 +21,12 @@ function startGame() {
 function addPlayer(id, player) {
     $('ol#players').append('<li><input type="text" id="' + id + '" value="' + player.name + '" size="12" onchange="changePlayerName(this.id, this.value)"> <button id="' + id + '" name="' + player.name + '" value="' + player.card + '" onclick="showCard(this.name, this.value)">カードを見る</button></li>')
     savePlayerJson(id, player)
+    determineShowCardButtonVisibility(id)
+}
+
+function determineShowCardButtonVisibility(id) {
+    let btn = $('button#' + id)
+    btn.prop("disabled", btn.attr("value") == 'null')
 }
 
 function getRandomInt(min, max) {
@@ -48,6 +54,7 @@ function dealCards() {
         numbers = numbers.filter(n => n !== num)
         $('button#' + id).val(num)
         savePlayerCard(id, num)
+        determineShowCardButtonVisibility(id)
     }
 }
 
