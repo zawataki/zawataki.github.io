@@ -64,6 +64,17 @@ function showCard(name, value) {
     }
 }
 
+function showAllCards() {
+    if (window.confirm("配られたカードをすべて表示しますか？")) {
+        let allCards = '配られたカード\n'
+        for (let i = 1; i <= $('#num_of_players').val(); i++) {
+            let btn = $('button#player-' + i)
+            allCards += btn.attr("name") + ' : ' + btn.val() + '\n'
+        }
+        window.alert(allCards)
+    }
+}
+
 function changePlayerName(id, name) {
     $('button#' + id).attr('name', name)
     savePlayerName(id, name)
